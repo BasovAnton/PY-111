@@ -8,7 +8,7 @@ from typing import Any
 
 class PriorityQueue:
     def __init__(self):
-        self.some_queue = {"high": []}
+        self.some_queue = {}
 
     def enqueue(self, elem: Any, priority: int = 0) -> None:
         """
@@ -21,8 +21,6 @@ class PriorityQueue:
             self.some_queue[priority] = [elem]
         else:
             self.some_queue[priority].append(elem)
-
-
         return None
 
     def dequeue(self) -> Any:
@@ -31,7 +29,8 @@ class PriorityQueue:
 
         :return: dequeued element
         """
-        return None
+
+        return value
 
     def peek(self, ind: int = 0, priority: int = 0) -> Any:
         """
