@@ -42,7 +42,14 @@ class Queue:
         """
 
         print(ind)
-        return None
+        if not self.queue:
+            return None
+        elif ind > len(self.queue)-1:
+            return None
+        else:
+            value = self.queue[ind]
+
+        return value
 
     def clear(self) -> None:
         """
@@ -50,4 +57,5 @@ class Queue:
 
         :return: None
         """
+        self.queue.clear()
         return None
