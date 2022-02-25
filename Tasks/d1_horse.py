@@ -19,9 +19,15 @@ def calculate_paths(shape: (int, int), point: (int, int)) -> int:
 
         if 0 <= j < cols:
             return 0
-        return sum ([count_parth(i-2, j-1),
+
+        return sum([count_parth(i-2, j-1),
                  count_parth(i-2, j+1),
                  count_parth(i-1, j-2),
                  count_parth(i+1, j-2),
                  ])
-    return  count_parth(point[0], point[1])
+    return count_parth(point[0], point[1])  # count_paths(*point)
+
+
+if __name__ == '__main__':
+    assert 13309 == calculate_paths((7, 15), (6, 14))
+    assert 2 == calculate_paths((4, 4), (3, 3))
